@@ -1,38 +1,62 @@
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
-public class User
+public class IfElse
 {
-	public static void main(String[] args)
-	{
-        System.out.println("NAME");
-        UserInput();
+	public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.println("Enter value of X :");
+//        int x = scanner.nextInt();
+//        System.out.println("Enter value of Y :");
+//        int y = scanner.nextInt();
+//
+//        if (x == y) {
+//            System.out.println("X and Y are equal.");
+//        } else if (x > y) {
+//            int z = x - y;
+//            System.out.format("X is greater than Y by%d.", z);
+//        } else {
+//            int z = x - y;
+//            System.out.format("Y is greater than X by %d", z);
+//        }
+        gammer();
     }
 
-    public  static void UserInput()
-    {
+    public static void game() {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter your name:");
-        String userName = scanner.next();
-        int userNameLength=userName.length();
-        System.out.println(userName + " is a nice name.");
-        System.out.println("your name has :"+ userNameLength + " characters.");
-
-        System.out.println("Enter your age:");
-        int userAge = scanner.nextInt();
-        int nextAge = userAge*2;
-        System.out.println(
-                "you have  " + userAge + " years in another"+ userAge +"you will be" +
-                        nextAge+" years old." );
-
-        System.out.println("What is your height, "+ userName);
-        double userHeight = scanner.nextDouble();
-        System.out.println("your are " + userHeight + "m tall.");
-
-        double averageMaleHeightDifference= userHeight - 1.75;
-        double averageFemaleHeightDifference= userHeight - 1.62;
-        System.out.println("The difference between your height and average is " );
-        System.out.format("%.2fm is you are male.", averageMaleHeightDifference);
-        System.out.format("%.2fm is you are female.", averageFemaleHeightDifference);
+        int chances = 2;
+        int randomNumber = ThreadLocalRandom.current().nextInt(1, 6);
+        for (int z = 0; z <= chances; z++) {
+            System.out.println("Guess a number between 1 and 6");
+            int pickedNum = scanner.nextInt();
+            if (randomNumber == pickedNum) {
+                System.out.println("  Correct! You guessed it!");
+            } else {
+                System.out.println("  Wrong! Try again!");
+            }
+        }
     }
+
+    public static void gammer() {
+        Scanner scanner = new Scanner(System.in);
+        int guess = 0;
+        int randomNumber2 = ThreadLocalRandom.current().nextInt(1, 101);
+
+
+        do {
+            System.out.println("Guess a number between 1 and 100");
+            guess = scanner.nextInt();
+           if (randomNumber2 == guess) {
+               System.out.println("Correct! You guessed it!");
+           }else if (randomNumber2 < guess) {
+               System.out.println("Try Higher");
+           }else {
+               System.out.println("Try Lower");
+           }
+
+
+        }while (randomNumber2 != guess);
+    }
+
 }
