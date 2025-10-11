@@ -40,7 +40,7 @@ public class IfElse
 
     public static void gammer() {
         Scanner scanner = new Scanner(System.in);
-        int guess = 0;
+        int guess;
         int randomNumber2 = ThreadLocalRandom.current().nextInt(1, 101);
 
 
