@@ -5,6 +5,7 @@ public class main {
         r1.setWidth(4);
         r1.setHeight(5);
         r1.calculateArea();
+        r1.perimeter();
     }
     
 }
